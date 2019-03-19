@@ -33,7 +33,7 @@ fun quickSort(array: MutableList<Int>, start: Int, end: Int) {
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val array = mutableListOf(5, 7, 8, 1, 2, 5, 6, 9)
     quickSort(array, 0, array.size - 1)
     println(array)
