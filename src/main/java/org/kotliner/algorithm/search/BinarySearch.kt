@@ -1,6 +1,6 @@
 package org.kotliner.algorithm.search
 
-fun binarySearch(array: MutableList<Int>, value: Int): Int {
+fun binarySearch(array: MutableList<Int>, value: Int): Int? {
     var start = 0
     var end = array.size - 1
 
@@ -12,7 +12,7 @@ fun binarySearch(array: MutableList<Int>, value: Int): Int {
             else -> start = binary + 1
         }
     }
-    return -1
+    return null
 }
 
 fun main() {
