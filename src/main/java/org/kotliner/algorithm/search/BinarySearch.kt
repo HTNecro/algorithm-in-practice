@@ -1,4 +1,4 @@
-package org.kotliner.algorithm.sort
+package org.kotliner.algorithm.search
 
 fun binarySearch(array: MutableList<Int>, value: Int): Int {
     var start = 0
