@@ -28,7 +28,7 @@ class BinarySearchTree {
     }
 
     private tailrec fun get(x: Node?, key: String): Any? {
-        if (x == null) return null
+        x ?: return null
         return when {
             key < x.key -> get(x.left, key)
             key > x.key -> get(x.right, key)
@@ -41,9 +41,7 @@ class BinarySearchTree {
     }
 
     private fun put(x: Node?, key: String, value: Any): Node {
-        if (x == null) {
-            return Node(key = key, value = value)
-        }
+        x ?: return Node(key = key, value = value)
         when {
             key < x.key -> x.left = put(x.left, key, value)
             key > x.key -> x.right = put(x.right, key, value)
