@@ -24,13 +24,12 @@ fun partition(array: MutableList<Int>, start: Int, end: Int): Int {
 }
 
 fun quickSort(array: MutableList<Int>, start: Int, end: Int) {
+    if (end <= start) {
+        return
+    }
     val index = partition(array, start, end)
-    if (start < index - 1) {
-        quickSort(array, start, index - 1)
-    }
-    if (end > index) {
-        quickSort(array, index, end)
-    }
+    quickSort(array, start, index - 1)
+    quickSort(array, index, end)
 }
 
 fun main() {

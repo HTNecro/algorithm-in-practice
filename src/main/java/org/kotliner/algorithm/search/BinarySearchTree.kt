@@ -11,15 +11,15 @@ class BinarySearchTree {
         var right: Node? = null
     )
 
-    fun printNodes() {
-        printNodes(root)
+    fun inOrderPrintNodes() {
+        inOrderPrintNodes(root)
     }
 
-    private fun printNodes(x: Node?) {
+    private fun inOrderPrintNodes(x: Node?) {
         x?.let {
-            printNodes(x.left)
+            inOrderPrintNodes(x.left)
             println("key: ${x.key}, value: ${x.value}")
-            printNodes(x.right)
+            inOrderPrintNodes(x.right)
         }
     }
 
@@ -83,7 +83,7 @@ class BinarySearchTree {
 
     private fun deleteMax(x: Node?): Node? {
         x?.right ?: return x?.left
-        x.right = deleteMin(x.right)
+        x.right = deleteMax(x.right)
         return x
     }
 
@@ -121,7 +121,7 @@ fun main() {
     bst.put("2", 22)
     bst.put("5", 55)
     bst.put("7", 55)
-    bst.printNodes()
+    bst.inOrderPrintNodes()
 
     println()
 
@@ -133,23 +133,23 @@ fun main() {
 
     bst.deleteMin()
     println("delete min")
-    bst.printNodes()
+    bst.inOrderPrintNodes()
 
     println()
 
     bst.deleteMax()
     println("delete max")
-    bst.printNodes()
+    bst.inOrderPrintNodes()
 
     println()
 
     bst.delete("3")
     println("delete node 3")
-    bst.printNodes()
+    bst.inOrderPrintNodes()
 
     println()
 
-    bst.delete("7")
-    println("delete node 7")
-    bst.printNodes()
+    bst.delete("5")
+    println("delete node 5")
+    bst.inOrderPrintNodes()
 }
