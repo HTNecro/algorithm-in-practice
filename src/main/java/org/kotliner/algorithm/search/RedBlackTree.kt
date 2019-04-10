@@ -208,30 +208,9 @@ class RedBlackTree {
     }
 
     // TODO
-//    fun delete(key: String) {
-//        root = delete(root, key)
-//    }
-//
-//    private fun delete(x: Node?, key: String): Node? {
-//        x ?: return null
-//        when {
-//            key < x.key -> x.left = delete(x.left, key)
-//            key > x.key -> x.right = delete(x.right, key)
-//            else -> {
-//                if (x.right == null) {
-//                    return x.left
-//                }
-//                if (x.left == null) {
-//                    return x.right
-//                }
-//                val node = min(x.right)
-//                node?.right = deleteMin(x.right)
-//                node?.left = x.left
-//                return node
-//            }
-//        }
-//        return x
-//    }
+    fun delete(key: String) {
+
+    }
 }
 
 fun main() {
@@ -264,13 +243,13 @@ fun main() {
 
     println()
 
-//    bst.delete("3")
-//    println("delete node 3")
-//    bst.preOrderPrintNodes()
-//
-//    println()
-//
-//    bst.delete("7")
-//    println("delete node 7")
-//    bst.preOrderPrintNodes()
+    bst.delete("3")
+    println("delete node 3")
+    bst.preOrderPrintNodes()
+
+    println()
+
+    bst.delete("7")
+    println("delete node 7")
+    bst.preOrderPrintNodes()
 }
