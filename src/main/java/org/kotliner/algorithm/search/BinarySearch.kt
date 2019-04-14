@@ -5,7 +5,7 @@ fun binarySearch(array: MutableList<Int>, value: Int): Int? {
     var end = array.size - 1
 
     while (start <= end) {
-        val binary = (start + end) / 2
+        val binary = start + (end - start) / 2
         when {
             value == array[binary] -> return binary
             value < array[binary] -> end = binary - 1
@@ -18,5 +18,5 @@ fun binarySearch(array: MutableList<Int>, value: Int): Int? {
 fun main() {
     val array = mutableListOf(1, 2, 5, 6, 7, 8, 9)
     val index = binarySearch(array, 5)
-    println(index)
+    assert(index == 2)
 }
